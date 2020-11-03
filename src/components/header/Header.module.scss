@@ -1,0 +1,19 @@
+.header {
+  background: #f5db13;
+  box-shadow: 0 4px 16px rgba(1, 28, 64, 0.2);
+}
+
+.wrapper {
+  max-width: 1140px;
+  margin: auto;
+  padding: 22px 25px 12px;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .logo {
+    width: 121px;
+    height: 45px;
+  }
+}
