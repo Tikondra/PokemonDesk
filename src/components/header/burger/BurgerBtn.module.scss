@@ -1,0 +1,12 @@
+.burger {
+  padding: 0;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+}
+
+@media (min-width: 768px) {
+  .burger {
+    display: none;
+  }
+}

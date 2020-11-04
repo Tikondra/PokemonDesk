@@ -1,0 +1,19 @@
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  h1 {
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 50px;
+  }
+}
