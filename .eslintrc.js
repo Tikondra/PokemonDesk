@@ -36,5 +36,9 @@ module.exports = {
         config: 'webpack.config.js',
       },
     },
+    "import/ignore": [
+      "\.(scss|less|css)$",
+      "node_modules"
+    ],
   },
 };
