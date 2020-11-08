@@ -13,6 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
   },
+  watch: true,
+  watchOptions: {
+    ignored: /node modules/,
+    poll: 1000
+  },
   module: {
     rules: [
       {
@@ -43,16 +48,24 @@ module.exports = {
         ],
       },
       {
-        test: /\.(png|jpg|jpeg)$/,
-        loader: 'file-loader',
-        options: {
-          outputPath: 'img/',
-          name: '[name].[ext]',
-        },
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/',
+            },
+          },
+        ],
+      },
+      {
+        test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
+        use: ['url-loader'],
       },
       {
         test: /\.svg$/,
-        loader: 'url-loader',
+        use: ['@svgr/webpack', 'url-loader']
       },
     ],
   },
