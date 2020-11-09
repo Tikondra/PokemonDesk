@@ -1,10 +1,16 @@
-body {
-  box-sizing: border-box;
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-  *,
-  *:before,
-  *:after {
-    box-sizing: inherit;
-  }
+* {
+  box-sizing: inherit;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: Karla, sans-serif;
 }

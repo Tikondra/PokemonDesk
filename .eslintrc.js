@@ -13,6 +13,9 @@ module.exports = {
   },
   plugins: ['prettier', 'prettier', 'react', '@typescript-eslint'],
   rules: {
+    'no-shadow': 'off', // replaced by ts-eslint rule below
+    '@typescript-eslint/no-shadow': 'error',
+    'react/prop-types': 'off',
     '@typescript-eslint/no-unused-vars': 'error',
     'no-console': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx', '.ts', '.js'] }],
@@ -33,5 +36,9 @@ module.exports = {
         config: 'webpack.config.js',
       },
     },
+    "import/ignore": [
+      "\.(scss|less|css)$",
+      "node_modules"
+    ],
   },
 };
