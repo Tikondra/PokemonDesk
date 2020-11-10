@@ -1,21 +1,21 @@
 import React from 'react';
-import Heading, {HeaderType} from "../../components/Heading/Heading";
-import s from "../Home/Home.module.scss";
-import Header from "../../components/header";
-import Layout from "../../components/Layout";
-import Footer from "../../components/footer/Footer";
+import s from './Pokedex.module.scss';
+import Layout from '../../components/Layout';
+import { pokemons } from '../../constants';
+import PokemonCard from '../../components/PokemonCard/PokemonCard';
 
 const Pokedex = () => {
   return (
-    <div className={s.root}>
-      <Header />
-      <Layout className={s.contentWrap}>
-        <Heading type={HeaderType.h1} >
-          Pokedex
-        </Heading>
-      </Layout>
-      <Footer />
-    </div>
+    <Layout>
+      <h2 className={s.title}>
+        800 <b>Pokemons</b> for you to choose your favorite
+      </h2>
+      <div className={s.list}>
+        {pokemons.map((it) => (
+          <PokemonCard key={it.id} pokemonData={it} />
+        ))}
+      </div>
+    </Layout>
   );
 };
 
