@@ -1,0 +1,10 @@
+@import '../../varibales';
+
+.root {
+  min-height: 100vh;
+  background: linear-gradient(180deg, $danger 0%, $second 100%);
+}
+
+.wrap {
+  padding: 20px;
+}

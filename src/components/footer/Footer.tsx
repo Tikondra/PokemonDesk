@@ -1,9 +1,8 @@
 import React from 'react';
-import cn from 'classnames';
-import classes from './Footer.module.scss';
+import s from './Footer.module.scss';
 
 const Footer: React.FC = () => (
-  <footer className={cn(classes.footer)}>
+  <footer className={s.footer}>
     <p>
       Make with{' '}
       <span role="img" aria-label="Emojis">
