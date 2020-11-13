@@ -2,6 +2,7 @@ import React from 'react';
 import { navigate } from 'hookrouter';
 import s from './NoFoundPage.module.scss';
 import Button, { ButtonColor, ButtonSize } from '../../components/Button';
+import { LinkEnum } from '../../routes';
 
 const NoFoundPage = () => {
   return (
@@ -12,7 +13,11 @@ const NoFoundPage = () => {
           <div>
             <span>The rocket team</span> has won this time.
           </div>
-          <Button onClick={() => navigate('/')} size={ButtonSize.medium} color={ButtonColor.yellow} isFullWidth={false}>
+          <Button
+            onClick={() => navigate(LinkEnum.HOME)}
+            size={ButtonSize.medium}
+            color={ButtonColor.yellow}
+            isFullWidth={false}>
             Return
           </Button>
         </div>
