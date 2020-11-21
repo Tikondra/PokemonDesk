@@ -4,6 +4,7 @@ import Layout from '../../components/Layout';
 import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import Heading, { HeaderType } from '../../components/Heading/Heading';
 import { PokemonType } from '../../constants';
+import { config } from '../../config/config';
 
 interface IPokemon {
   abilities: string[];
@@ -40,8 +41,9 @@ const usePokemons = () => {
   useEffect(() => {
     const getPokemons = async () => {
       setIsLoading(true);
+      const url = `${config.client.server.protocol}://${config.client.server.host}${config.client.endpoint.getPokemons.url.pathname}`;
       try {
-        const response = await fetch('http://zar.hosthot.ru/api/v1/pokemons?limit=30');
+        const response = await fetch(url);
         const result = await response.json();
         setData(result);
       } catch (e) {
