@@ -5,6 +5,7 @@ import PokemonCard from '../../components/PokemonCard/PokemonCard';
 import Heading, { HeaderType } from '../../components/Heading/Heading';
 import { PokemonType } from '../../constants';
 import { config } from '../../config/config';
+import req from '../../utils/request';
 
 interface IPokemon {
   abilities: string[];
@@ -41,10 +42,8 @@ const usePokemons = () => {
   useEffect(() => {
     const getPokemons = async () => {
       setIsLoading(true);
-      const url = `${config.client.server.protocol}://${config.client.server.host}${config.client.endpoint.getPokemons.url.pathname}`;
       try {
-        const response = await fetch(url);
-        const result = await response.json();
+        const result = await req('getPokemons');
         setData(result);
       } catch (e) {
         setIsError(true);
