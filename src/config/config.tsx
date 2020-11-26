@@ -8,7 +8,13 @@ export const config = {
       getPokemons: {
         method: 'GET',
         url: {
-          pathname: '/api/v1/pokemons?limit=30',
+          pathname: '/api/v1/pokemons',
+        },
+      },
+      getPokemon: {
+        method: 'GET',
+        url: {
+          pathname: '/api/v1/pokemon/{id}',
         },
       },
     },
